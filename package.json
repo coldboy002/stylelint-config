@@ -1,0 +1,51 @@
+{
+  "name": "@coldboy002/stylelint-config",
+  "version": "1.0.0",
+  "description": "Shareable stylelint config for CSS/SCSS",
+  "keywords": [
+    "stylelint",
+    "stylelint-config",
+    "stylelint-order",
+    "standard-css",
+    "standard-scss",
+    "properties-order",
+    "css property order",
+    "declaration-order",
+    "css declaration order",
+    "stylelint-config-recess-order"
+  ],
+  "homepage": "https://github.com/coldboy002/stylelint-config#readme",
+  "bugs": {
+    "url": "https://github.com/coldboy002/stylelint-config/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coldboy002/stylelint-config.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Vũ Trọng Thuỷ",
+    "email": "coldboy002@gmail.com",
+    "url": "https://github.com/coldboy002"
+  },
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "prettier": "^2.8.8",
+    "stylelint": "^15.5.0",
+    "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard-scss": "^9.0.0",
+    "stylelint-prettier": "^3.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^15.5.0"
+  },
+  "engines": {
+    "node": ">=15"
+  }
+}
