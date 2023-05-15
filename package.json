@@ -1,6 +1,6 @@
 {
   "name": "@coldboy002/stylelint-config",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Shareable stylelint config for CSS/SCSS",
   "keywords": [
     "stylelint",
@@ -36,16 +36,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "prettier": "^2.8.8",
-    "stylelint": "^15.5.0",
+    "@coldboy002/prettier-config": "^1.0.0",
     "stylelint-config-recess-order": "^4.0.0",
+    "stylelint-config-standard": "^33.0.0",
     "stylelint-config-standard-scss": "^9.0.0",
     "stylelint-prettier": "^3.0.0"
   },
-  "peerDependencies": {
-    "stylelint": "^15.5.0"
+  "devDependencies": {
+    "prettier": "^2.8.8",
+    "stylelint": "^15.6.1"
   },
+  "peerDependencies": {
+    "stylelint": "^15.6.1"
+  },
+  "prettier": "@coldboy002/prettier-config",
   "engines": {
     "node": ">=15"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
