@@ -1,19 +1,17 @@
-// TODO: order?
-
 // Some additions based on:
 // * https://github.com/bjankord/stylelint-config-sass-guidelines/issues/20
 // const SELECTOR_CLASS_PATTERN_BEM =
 //   '^(?:(?:|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$';
 // * https://github.com/bjankord/stylelint-config-sass-guidelines
-// const SELECTOR_CLASS_PATTERN_SASS_GUIDELINES =
-//   '^(?:u|is|has)-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:-[a-z][a-zA-Z0-9]*)?(?:--[a-z][a-zA-Z0-9]*)?$';
+// const SELECTOR_CLASS_PATTERN_SASS_GUIDELINES = '^(?:u|is|has)-[a-z][a-zA-Z0-9]*$|^(?!u|is|has)[a-zA-Z][a-zA-Z0-9]*(?:-[a-z][a-zA-Z0-9]*)?(?:--[a-z][a-zA-Z0-9]*)?$';
+// const SELECTOR_CLASS_PATTERN_OLDER = '^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9\\@]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$';
 
 const SELECTOR_CLASS_PATTERN =
-  '^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9\\@]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$';
+  '^(?:(?:o|c|u|t|is|has|js)-)?[a-zA-Z0-9]+(?:-[a-zA-Z0-9\\@]+)*(?:__[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:--[a-zA-Z0-9]+(?:-[a-zA-Z0-9]+)*)?(?:\\[.+\\])?$';
 
 module.exports = {
   extends: [
-    'stylelint-config-standard-scss',
+    'stylelint-config-standard',
     'stylelint-config-recess-order',
     'stylelint-prettier/recommended',
   ],
@@ -78,7 +76,15 @@ module.exports = {
     'selector-max-compound-selectors': 3,
     'selector-max-id': 0,
     'selector-no-qualifying-type': true,
-    'scss/at-import-partial-extension-blacklist': ['scss'],
-    'scss/selector-no-redundant-nesting-selector': true,
   },
+  overrides: [
+    {
+      files: ['**/*.scss'],
+      extends: ['stylelint-config-standard-scss'],
+      rules: {
+        'scss/at-import-partial-extension-blacklist': ['scss'],
+        'scss/selector-no-redundant-nesting-selector': true,
+      },
+    },
+  ],
 };
