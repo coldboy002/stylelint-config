@@ -1,0 +1,46 @@
+@import url('foo.css');
+@import url('bar.css');
+
+@custom-media --foo (min-width: 30em);
+
+/**
+ * Multi-line comment
+ */
+
+:root {
+  --brand-red: hsl(5deg 10% 40%);
+}
+
+/* Single-line comment */
+
+.class-foo:not(a, div) {
+  margin: 0;
+  top: calc(100% - 2rem);
+}
+
+/* Flush single line comment */
+@media (width >= 60em) {
+  #id-bar {
+    /* Flush to parent comment */
+    --offset: 0px;
+    color: #fff;
+    left: calc(var(--offset) + 50%);
+    font-family: Helvetica, "Arial Black", sans-serif;
+  }
+
+  /* Flush nested single line comment */
+  a::after {
+    content: "→";
+    background-image: url("x.svg");
+    display: block;
+  }
+}
+
+@keyframes fade-in {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.insert {display: block}
+.alter:after {color: red; content: 'example'}
+.delete {display: block;;}
