@@ -1,22 +1,32 @@
 # @coldboy002/stylelint-config
 
+[![NPM version](https://img.shields.io/npm/v/@coldboy002/stylelint-config.svg)](https://www.npmjs.org/package/@coldboy002/stylelint-config)
+
 > Shareable stylelint config for CSS/SCSS
 
 ## Installation
 
 ```bash
-npm install --save-dev @coldboy002/stylelint-config stylelint
+npm install --save-dev @coldboy002/stylelint-config
 ```
 
 or
 
 ```bash
-yarn add --dev @coldboy002/stylelint-config stylelint
+yarn add --dev @coldboy002/stylelint-config
 ```
 
 Note: This package requires Node.js 15.0.0 or later. It is not compatible with older versions.
 
 ## Usage
+
+Add this line to your `package.json`
+
+```json
+"stylelint": {
+  "extends": "@coldboy002/stylelint-config"
+}
+```
 
 Add this config to `.stylelintrc.json`:
 
@@ -43,11 +53,10 @@ For example, to turn off the `scss/dollar-variable-pattern` rule:
 }
 ```
 
-See also: [https://stylelint.io/user-guide/configure#extends](https://stylelint.io/user-guide/configure#extends)
-
 ## Extensions
 
 - [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order) — A Stylelint config that sorts CSS properties the way Recess did and Bootstrap did/does.
+- [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) shared config and configures its rules for SCSS
 - [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) — The standard shareable SCSS config for Stylelint.
 
 ## Rules
@@ -58,115 +67,6 @@ Rules are grouped and sorted by default as in the original lists:
 
 - [stylelint](https://stylelint.io/user-guide/rules/list)
 - [stylelint-scss](https://github.com/kristerkari/stylelint-scss#list-of-rules)
-
-## Example
-
-### Before
-
-```css
-@import url("foo.css");
-@import url("bar.css");
-
-@custom-media --foo (min-width: 30em);
-
-/**
- * Multi-line comment
- */
-
-:root {
-  --brand-red: hsl(5deg 10% 40%);
-}
-
-/* Single-line comment */
-
-.class-foo:not(a, div) {
-  margin: 0;
-  top: calc(100% - 2rem);
-}
-
-/* Flush single line comment */
-@media (width >= 60em) {
-  #id-bar {
-    /* Flush to parent comment */
-    --offset: 0px;
-
-    color: #fff;
-    font-family: Helvetica, "Arial Black", sans-serif;
-    left: calc(var(--offset) + 50%);
-  }
-
-  /* Flush nested single line comment */
-  a::after {
-    display: block;
-    content: "→";
-    background-image: url("x.svg");
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-```
-
-### After
-
-```css
-@import 'foo.css';
-@import 'bar.css';
-
-@custom-media --foo (min-width: 30em);
-
-/**
- * Multi-line comment
- */
-
-:root {
-  --brand-red: hsl(5deg 10% 40%);
-}
-
-/* Single-line comment */
-
-.class-foo:not(a, div) {
-  top: calc(100% - 2rem);
-  margin: 0;
-}
-
-/* Flush single line comment */
-@media (width >= 60em) {
-  #id-bar { //Don't use id
-    /* Flush to parent comment */
-    --offset: 0px;
-
-    left: calc(var(--offset) + 50%);
-    font-family: Helvetica, 'Arial Black', sans-serif;
-    color: #fff;
-  }
-
-  /* Flush nested single line comment */
-  a::after {
-    display: block;
-    content: '→';
-    background-image: url('x.svg');
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-}
-
-```
 
 ## [Changelog](CHANGELOG.md)
 
