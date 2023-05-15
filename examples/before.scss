@@ -1,0 +1,53 @@
+.selector {
+  background-image: url(/path/to/image);
+  color: #EEEEEE;
+  font-size: .98rem;
+  padding: rem(12) rem(24);
+  margin: 0rem rem(6);
+  &:before {
+    background: $color-black;
+    content: "✌";
+  }
+  &[type='text'] {
+    font-size: 1rem;
+  }
+}
+.selector-1, .selector-2
+{
+  background-color: $color-brand;background-image: linear-gradient($color-white, $color-grey-mercury),linear-gradient($color-black, $color-grey-alabaster);
+  box-shadow: 1px 1px 1px $color-black,
+    2px 2px 1px 1px $color-grey-mercury inset;
+  color:$color-text-base;
+  display: block;
+  padding: rem($spacing-base)}
+%block {
+    display: block;
+}
+
+.selector3 {
+  @extend %block;
+  @include u-text-truncate();
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  padding: $padding-setting;
+  &.selector--modifier {
+    font-size: 1rem;
+  }
+  .parent-selector & {
+    font-size: 1.25rem;
+  }
+  .nested__selector .nested__selector {
+    font-size: 1.5rem;
+  }
+  @media only screen and (width >= 768px) {
+    color: #fed;
+    background-color: rgb(0 0 0 / 20%);
+  }
+}
+
+@function strip-unit($number) {
+  @if type-of($number) == "number" and not unitless($number) {
+    @return $number / ($number * 0 + 1);
+  }
+  @return $number;
+}
