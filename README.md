@@ -16,7 +16,7 @@ or
 yarn add --dev @coldboy002/stylelint-config
 ```
 
-Note: This package requires Node.js 15.0.0 or later. It is not compatible with older versions.
+Note: This package requires Node.js 20.0.0 or later. It is not compatible with older versions.
 
 ## Usage
 
@@ -55,18 +55,19 @@ For example, to turn off the `scss/dollar-variable-pattern` rule:
 
 ## Extensions
 
-- [stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order) — A Stylelint config that sorts CSS properties the way Recess did and Bootstrap did/does.
+- [stylelint-config-clean-order](https://github.com/kutsan/stylelint-config-clean-order) — A Stylelint config that sorts CSS properties the way Recess did and Bootstrap did/does.
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) shared config and configures its rules for SCSS
 - [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) — The standard shareable SCSS config for Stylelint.
 
 ## Rules
 
-To see the rules that this config uses, please read the [config itself](./index.js).
+To see the rules that this config uses, please read the [config itself](./stylelint.config.cjs).
 
 Rules are grouped and sorted by default as in the original lists:
 
 - [stylelint](https://stylelint.io/user-guide/rules/list)
 - [stylelint-scss](https://github.com/kristerkari/stylelint-scss#list-of-rules)
+- [stylelint-order](https://github.com/hudochenkov/stylelint-order)
 
 ## [Changelog](CHANGELOG.md)
 

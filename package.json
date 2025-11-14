@@ -11,8 +11,7 @@
     "properties-order",
     "css property order",
     "declaration-order",
-    "css declaration order",
-    "stylelint-config-recess-order"
+    "css declaration order"
   ],
   "homepage": "https://github.com/coldboy002/stylelint-config#readme",
   "bugs": {
@@ -28,30 +27,29 @@
     "email": "coldboy002@gmail.com",
     "url": "https://github.com/coldboy002"
   },
-  "main": "index.js",
-  "files": [
-    "index.js"
-  ],
+  "main": "stylelint.config.cjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "@coldboy002/prettier-config": "^1.0.0",
-    "stylelint-config-recess-order": "^4.0.0",
-    "stylelint-config-standard": "^33.0.0",
-    "stylelint-config-standard-scss": "^9.0.0",
-    "stylelint-prettier": "^3.0.0"
-  },
-  "devDependencies": {
-    "prettier": "^2.8.8",
-    "stylelint": "^15.6.1"
-  },
-  "peerDependencies": {
-    "stylelint": "^15.6.1"
+    "format:package": "prettier --write package.json",
+    "lint": "npm run lint:css && npm run lint:scss",
+    "lint:css": "stylelint \"**/*.css\" --fix",
+    "lint:scss": "stylelint \"**/*.scss\" --fix"
   },
   "prettier": "@coldboy002/prettier-config",
+  "dependencies": {
+    "stylelint-config-clean-order": "^7.0.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0"
+  },
+  "devDependencies": {
+    "@coldboy002/prettier-config": "^1.2.0",
+    "prettier": "^3.6.2",
+    "stylelint": "^16.25.0"
+  },
+  "peerDependencies": {
+    "stylelint": ">=16.0.0"
+  },
   "engines": {
-    "node": ">=15"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public"
