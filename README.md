@@ -6,11 +6,13 @@
 
 ## Installation
 
+***npm***
+
 ```bash
 npm install --save-dev @coldboy002/stylelint-config
 ```
 
-or
+***yarn***
 
 ```bash
 yarn add --dev @coldboy002/stylelint-config
@@ -55,7 +57,7 @@ For example, to turn off the `scss/dollar-variable-pattern` rule:
 
 ## Extensions
 
-- [stylelint-config-clean-order](https://github.com/kutsan/stylelint-config-clean-order) — A Stylelint config that sorts CSS properties the way Recess did and Bootstrap did/does.
+- [stylelint-config-clean-order](https://github.com/kutsan/stylelint-config-clean-order) — Order your styles with stylelint-order..
 - [stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard) shared config and configures its rules for SCSS
 - [stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss) — The standard shareable SCSS config for Stylelint.
 
